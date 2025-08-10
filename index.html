@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nattyamudhra — Classical Dance School</title>
+  <meta name="description" content="Nattyamudhra — Classical dance training center in Pannikode, Kozhikode. Kathakali, Ottanthullal, Bharatanatyam, Kuchipudi." />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fff8f2;
+      --accent: #8a1f1f;
+      --accent-2: #c48b2a;
+      --muted: #6b5b4a;
+      --card: #fff;
+      --glass: rgba(255,255,255,0.7);
+      --radius: 14px;
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui;
+      background: linear-gradient(180deg,var(--bg),#fff);
+      color:var(--muted);
+    }
+    .location-btn {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .location-btn:hover {
+    background-color: #e63939;
+    transform: scale(1.05);
+    }
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter: blur(6px);z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;background: linear-gradient(180deg, rgba(255,248,242,0.6), rgba(255,248,242,0.35));border-bottom:1px solid rgba(139,31,31,0.06)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:900;font-family:'Merriweather';font-size:20px}
+    .brand h1{margin:0;font-family:'Merriweather';font-size:18px;color:var(--accent)}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+    .cta{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;text-decoration:none}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:36px 0}
+    .hero-inner{display:flex;flex-direction:column;gap:16px}
+    .tag{font-family:'Merriweather';font-size:28px;color:var(--accent)}
+    .lead{font-size:16px;line-height:1.6;color:var(--muted)}
+    .hero-actions{display:flex;gap:12px}
+    .hero-media{display:grid;place-items:center;}
+    .hero-media{ background: linear-gradient(180deg,var(--bg),#fff);}
+    .hero-media img{width:100%;max-width:500px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08);background: linear-gradient(180deg,var(--bg),#fff);}
+    section{padding:36px 0}
+    h2{font-family:'Merriweather';color:var(--accent);font-size:22px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:16px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;font-size:14px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer}
+    .contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #eee}
+    footer{padding:18px 0;text-align:center;color:#8b6b5a}
+    @media(min-width:700px){
+      .hero{grid-template-columns:1fr 420px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(4,1fr)}
+      .contact-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.hero .tag{font-size:32px}}
+    .menu-toggle{display:none}
+    @media(max-width:699px){nav ul{display:none}.menu-toggle{display:inline-block}}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:80}
+    .modal.open{display:flex}
+    .modal img{max-width:90%;max-height:85%;border-radius:10px}
+    .muted{color:#8b6b5a}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">NM</div>
+        <div>
+          <h1>Nattyamudhra</h1>
+          <div style="font-size:12px;color:var(--muted)">Pannikode, Kozhikode • Classical Dance</div>
+        </div>
+      </div>
+      <div>
+        <button class="menu-toggle" aria-label="menu">☰</button>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <a class="cta" href="#contact">Enroll Now</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="home" class="hero">
+       <div class="hero-inner">
+        <div class="tag">Where Tradition Meets Grace</div>
+        <p class="lead">Nattyamudhra teaches Kerala's classical dance heritage with authentic methods inspired by Kerala Kalamandalam. We welcome students of all ages and skill levels.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#courses">View Courses</a>
+          
+        </div>
+      </div>
+      <div class="hero-media" >
+        <img src="pto-removebg-preview.png"   alt="Dance performance">
+      </div>
+    </section><br><br><br><br>
+    <section id="about"><br>
+      <h2>About Nattyamudhra</h2>
+      <p class="muted">Nattyamudhra is a classical dance training center dedicated to preserving and promoting the rich heritage of Indian dance. We offer training in various dance forms including Mohiniyattam, Kerala 
+        Nadanam, Kathakali, Bharatanatyam, Kuchipudi, Folk Dance, and even Western styles. Our teaching follows the traditional Kerala Kalamandalam methods, ensuring authenticity and depth in every performance.</p>
+      <h2>Our Teacher</h2>
+      <p><b>Kalamandalam Sarath Das</b> — A highly skilled and passionate dancer with a B.A. in Kathakali from Kerala Kalamandalam. With years of experience in both performance and teaching, he brings the essence of tradition and the art of expression to every student</p>  
+       <h2>Manager</h2> 
+       <p><b>Amal Raj</b> — Dedicated to ensuring smooth operations and providing students with the best learning environment possible.</p>
+    </section>
+    <section id="courses">
+      <h2>Courses</h2>
+      <div class="grid">
+        <article class="card"><h3>Kathakali</h3><p>Classical theatre-dance from Kerala.</p></article>
+        <article class="card"><h3>Bharatanatyam</h3><p>South Indian classical form.</p></article>
+        <article class="card"><h3>Ottanthullal</h3><p>Folk-classical form with rhythmic narration.</p></article>
+        <article class="card"><h3>Kuchipudi</h3><p>Graceful footwork and storytelling.</p></article>
+        <article class="card"><h3>Mohiniyattam</h3><p>Mohiniyattam is a graceful classical dance of Kerala, celebrated for its gentle swaying movements and expressive storytelling.</p></article>
+        <article class="card"><h3>Keralanadanam</h3><p>Kerala Nadanam is a modern classical dance form of Kerala that blends traditional temple dance techniques with expressive storytelling and graceful movements.</p></article>
+        <article class="card"><h3>Western Dance</h3><p>Western dance is a broad term for dance styles from the West, including genres like jazz, hip-hop, ballet, and contemporary, focusing on rhythm, creativity, and performance.</p></article>
+        <article class="card"><h3>Folk Dance</h3><p>Folk dance is a traditional dance form that reflects the culture, customs, and stories of a community, often performed during festivals and celebrations.</p></article>
+        <article class="card"><h3>Group Dance</h3><p>Special training for Kalolsavam.</p></article>
+
+    </div>
+    </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="allery/allu.jpg" alt="gallery1">
+        <img src="allery/mh3.JPG" alt="gallery2">
+        <img src="allery/mh4.JPG" alt="gallery3">
+        <img src="allery/mh5.JPG" alt="gallery4">
+        <img src="allery/mh8.jpg" alt="gallery3">
+        <img src="allery/mh7.jpg" alt="gallery2">
+        <img src="allery/mh6.jpg" alt="gallery1">
+        <img src="allery/mh9.jpg" alt="gallery4">
+      </div>
+      <div id="lightbox" class="modal" aria-hidden="true">
+        <img id="lightbox-img" src="" alt="preview">
+      </div>
+    </section>
+    <section id="contact">
+        <br><br>
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Get in touch</h3>
+          
+          <p class="muted">Phone: +91 9567146836</p>
+          <br>
+          <p class="muted">Email: amalraj956714@gmail.com</p>
+          <br>
+          <p class="muted">Location: Pannikode, Kozhikode</p>
+          <br>
+          <p><a href="https://share.google/5kXlX2NFA5vR4SpIq" target="_blank" class="location-btn">📍 View Location</a></p>
+        </div>
+        <form class="card" id="contactForm" onsubmit="return false;">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="Mobile number" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button type="submit" class="cta" onclick="submitForm()">Send Message</button>
+            <button type="reset" style="padding:8px 12px;border-radius:10px;border:1px solid var(--accent);background:transparent;color:var(--accent)">Reset</button>
+          </div>
+          <div id="formMsg" style="margin-top:10px;font-size:14px"></div>
+        </form>
+      </div>
+    </section>
+    <footer>© Nattyamudhra — Traditional Classical Dance • Pannikode, Kozhikode</footer>
+  </main>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth'});
+        }
+      });
+    });
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    galleryImgs.forEach(img=>{
+      img.addEventListener('click', ()=>{
+        lightboxImg.src = img.src;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+      });
+    });
+    lightbox.addEventListener('click', ()=>{
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src='';
+    });
+    function submitForm(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const formMsg = document.getElementById('formMsg');
+      if(!name || !phone || !message){
+        formMsg.textContent = 'Please fill all fields.';
+        formMsg.style.color = 'crimson';
+        return;
+      }
+      const text = `Hello, my name is ${name} (+91${phone}). ${message}`;
+      const url = `https://wa.me/919567146836?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+    const toggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    toggle && toggle.addEventListener('click', ()=>{
+      navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
